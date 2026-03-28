@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TruthLens AI Project Report</title>
+  <style>
+    :root {
+      --bg: #081316;
+      --panel: #0f1d20;
+      --panel-soft: #13262a;
+      --line: #244846;
+      --text: #edf6f3;
+      --muted: #88a7a2;
+      --accent: #16c2b0;
+      --gold: #f1ba67;
+      --safe: #22c87a;
+      --warn: #f5a623;
+      --risk: #f04f4f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #081316, #0b171a 24%, #081316);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+    .page {
+      width: min(1120px, calc(100% - 48px));
+      margin: 28px auto;
+      padding: 36px 40px;
+      background: rgba(15, 29, 32, 0.96);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.12; }
+    h1 { font-size: 56px; max-width: 760px; }
+    h2 { font-size: 30px; margin-bottom: 14px; }
+    h3 { font-size: 20px; margin-bottom: 8px; }
+    p, li, td, th { font-size: 17px; color: var(--muted); }
+    .lead { font-size: 22px; color: var(--text); max-width: 880px; }
+    .meta, .badge-row, .grid, .two-col, .image-grid, .stack-grid, .flow-grid { display: grid; gap: 18px; }
+    .meta { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; }
+    .card, .metric, .flow, .shot, .stack, .summary-box {
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+    }
+    .metric strong, .stack strong, .summary-box strong {
+      display: block;
+      color: var(--text);
+      font-size: 22px;
+      margin-top: 6px;
+    }
+    .badge-row { grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 24px; }
+    .badge {
+      padding: 12px 16px;
+      text-align: center;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(22, 194, 176, 0.08);
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .two-col { grid-template-columns: 1.2fr 0.8fr; align-items: start; }
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .flow-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .flow .step {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(22, 194, 176, 0.12);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+    }
+    .table th, .table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(136, 167, 162, 0.16);
+      vertical-align: top;
+    }
+    .table th { color: var(--text); background: #13262a; font-size: 16px; }
+    .image-grid { grid-template-columns: 1fr; }
+    figure { margin: 0; }
+    .shot img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      display: block;
+      background: #081316;
+    }
+    figcaption { margin-top: 12px; color: var(--muted); font-size: 15px; }
+    ul { margin: 0; padding-left: 20px; }
+    .summary-box { background: linear-gradient(180deg, rgba(22, 194, 176, 0.12), rgba(19, 38, 42, 0.88)); }
+    .accent { color: var(--accent); }
+    .gold { color: var(--gold); }
+    .text { color: var(--text); }
+    @media print {
+      body { background: #ffffff; }
+      .page {
+        width: auto;
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        min-height: 100vh;
+      }
+    }
+    @media (max-width: 900px) {
+      .meta, .badge-row, .two-col, .grid, .stack-grid, .flow-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 42px; }
+      .page { width: calc(100% - 24px); padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="eyebrow">Project Report</div>
+    <h1>TruthLens AI</h1>
+    <p class="lead">A real-time interview integrity platform for remote hiring that combines facial cues, voice stress, behavior tracking, and environment monitoring into one recruiter-facing decision support system.</p>
+    <div class="meta">
+      <div class="metric"><span class="accent">Project Type</span><strong>AI-Powered Web Platform</strong><p>Multimodal behavioral analysis for virtual interviews.</p></div>
+      <div class="metric"><span class="accent">Primary Users</span><strong>Recruiters and HR Teams</strong><p>Designed for campus hiring, remote recruiting, and online screening workflows.</p></div>
+      <div class="metric"><span class="accent">Prepared On</span><strong>25 March 2026</strong><p>Documentation package generated for product presentation and evaluation.</p></div>
+    </div>
+    <div class="badge-row">
+      <div class="badge">React.js</div><div class="badge">FastAPI</div><div class="badge">Python</div><div class="badge">OpenCV + DeepFace</div><div class="badge">Librosa + YOLO</div>
+    </div>
+  </section>
+  <section class="page">
+    <h2>1. Abstract</h2>
+    <p>TruthLens AI addresses a growing challenge in remote recruitment: during virtual interviews, recruiters often rely on subjective judgement to evaluate candidate confidence, emotional stability, and authenticity. That approach is inconsistent, difficult to scale, and vulnerable to hidden bias or missed warning signals. TruthLens AI introduces a unified digital platform that observes webcam, microphone, and interview-environment signals in real time and converts them into structured behavioral intelligence.</p>
+    <p>The platform combines facial authenticity analysis, voice stress monitoring, behavioral cue detection, and environment integrity checks into one recruiter workflow. It provides a live integrity score, dynamic flags, trend summaries, and a downloadable interview report. The project is built with a React.js frontend, a FastAPI backend, and a Python-oriented AI model pipeline designed for OpenCV, DeepFace, Librosa, and YOLO integration.</p>
+    <h2>2. Problem Statement</h2>
+    <div class="two-col">
+      <div class="summary-box"><strong>Core Problem</strong><p>Virtual interviews make it harder to assess whether a candidate is genuinely confident, under stress, receiving outside assistance, or displaying suspicious behavior. Existing workflows do not combine face, voice, and environment intelligence in a single accessible system.</p></div>
+      <div class="summary-box"><strong>Why It Matters</strong><p>Hiring decisions made from incomplete cues can lead to poor candidate selection, inconsistent evaluation standards, and limited trust in remote interviewing at scale.</p></div>
+    </div>
+    <h2>3. Objectives</h2>
+    <ul>
+      <li>Provide recruiters with real-time, data-driven behavioral insights during video interviews.</li>
+      <li>Detect stress, gaze aversion, abnormal movement, mobile phone usage, and multiple-person interference.</li>
+      <li>Aggregate multimodal cues into a single integrity score and final recruiter report.</li>
+      <li>Offer a scalable product foundation for future deployment in hiring and assessment platforms.</li>
+    </ul>
+  </section>
+  <section class="page">
+    <h2>4. Existing System and Limitations</h2>
+    <div class="grid">
+      <div class="card"><h3>Subjective Evaluation</h3><p>Traditional interviews depend on the interviewer’s experience and attention span, which vary widely across sessions and organizations.</p></div>
+      <div class="card"><h3>No Unified Analysis</h3><p>Most tools focus on video conferencing, not integrated analysis of face, voice, and scene-level suspicious behavior.</p></div>
+      <div class="card"><h3>Missed Behavioral Signals</h3><p>Stress spikes, repeated looking away, and environment-level anomalies are difficult to capture manually in real time.</p></div>
+      <div class="card"><h3>Low Explainability</h3><p>Recruiters rarely receive structured evidence or review-ready summaries to support final decisions after an interview ends.</p></div>
+    </div>
+    <h2>5. Proposed Solution</h2>
+    <p>TruthLens AI acts as an interview intelligence layer on top of a live video interview. The frontend captures candidate media signals and session interactions. The backend organizes the session state, computes weighted behavioral metrics, and returns recruiter-ready snapshots. The AI layer is designed to plug in facial analysis, audio processing, and object detection models without changing the UI contract.</p>
+    <div class="flow-grid">
+      <div class="flow"><span class="step">Step 01</span><h3>Capture</h3><p>Webcam, microphone, and environment cues are collected from the browser.</p></div>
+      <div class="flow"><span class="step">Step 02</span><h3>Analyze</h3><p>Face, voice, and object-detection models extract structured behavioral evidence.</p></div>
+      <div class="flow"><span class="step">Step 03</span><h3>Score</h3><p>Signals are weighted into a live integrity score with flags and risk labels.</p></div>
+      <div class="flow"><span class="step">Step 04</span><h3>Report</h3><p>Recruiters receive a live dashboard and a final downloadable summary.</p></div>
+    </div>
+  </section>
+  <section class="page">
+    <h2>6. System Architecture</h2>
+    <table class="table">
+      <thead><tr><th>Layer</th><th>Technology</th><th>Role in the System</th></tr></thead>
+      <tbody>
+        <tr><td class="text">Frontend</td><td>React.js, Vite, Chart.js, jsPDF</td><td>Provides the landing page, recruiter dashboard, live interview screen, analytics views, and downloadable PDF reports.</td></tr>
+        <tr><td class="text">Backend</td><td>FastAPI, Python</td><td>Handles session orchestration, signal fusion, scoring logic, dashboard endpoints, and final report assembly.</td></tr>
+        <tr><td class="text">Vision AI</td><td>OpenCV, DeepFace</td><td>Extracts facial emotion, expression stability, confidence, stress, and nervousness patterns.</td></tr>
+        <tr><td class="text">Audio AI</td><td>Librosa</td><td>Supports stress-oriented audio feature extraction such as calmness, tremor, pacing, and pitch variation.</td></tr>
+        <tr><td class="text">Environment AI</td><td>YOLO</td><td>Detects phones, multiple persons, and suspicious objects in the interview frame.</td></tr>
+      </tbody>
+    </table>
+    <h2>7. Core Functional Modules</h2>
+    <div class="stack-grid">
+      <div class="stack"><span class="accent">Module 01</span><strong>Facial Authenticity Analysis</strong><p>Monitors dominant expression, stability score, confidence level, stress, and nervousness from candidate facial frames.</p></div>
+      <div class="stack"><span class="accent">Module 02</span><strong>Voice Stress Monitoring</strong><p>Captures calmness, voice tremor, speech speed, and pitch variation to identify stress-related vocal anomalies.</p></div>
+      <div class="stack"><span class="accent">Module 03</span><strong>Behavior Tracking</strong><p>Tracks eye contact, looking-away frequency, head turning, and movement stability to measure response integrity.</p></div>
+      <div class="stack"><span class="accent">Module 04</span><strong>Environment Monitoring</strong><p>Flags multiple persons, mobile phone usage, and suspicious surroundings that may indicate outside assistance.</p></div>
+    </div>
+  </section>
+  <section class="page">
+    <h2>8. UI Overview</h2>
+    <div class="image-grid">
+      <figure class="shot"><img src="assets/ui-landing.svg" alt="TruthLens AI landing page" /><figcaption><span class="text">Figure 1.</span> Landing page UI preview showing the product positioning, multimodal AI features, and entry points for candidate and recruiter workflows.</figcaption></figure>
+      <figure class="shot"><img src="assets/ui-dashboard.svg" alt="TruthLens AI recruiter dashboard" /><figcaption><span class="text">Figure 2.</span> Recruiter dashboard preview showing session metrics, score comparison, verdict distribution, session history, and the AI stack overview.</figcaption></figure>
+      <figure class="shot"><img src="assets/ui-interview.svg" alt="TruthLens AI live interview screen" /><figcaption><span class="text">Figure 3.</span> Live interview monitoring UI preview with video analysis overlays, environment monitoring, integrity score, signal bars, and active behavioral flags.</figcaption></figure>
+    </div>
+  </section>
+  <section class="page">
+    <h2>9. Integrity Scoring Logic</h2>
+    <p>The current build includes a mock inference engine with a production-ready response contract. The score is computed from weighted interview signals and then adjusted by environment penalties.</p>
+    <table class="table">
+      <thead><tr><th>Signal</th><th>Indicative Weight</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td class="text">Emotion Stability</td><td>25%</td><td>Measures facial steadiness and emotional consistency during responses.</td></tr>
+        <tr><td class="text">Eye Contact Ratio</td><td>20%</td><td>Reflects candidate focus and gaze behavior while answering.</td></tr>
+        <tr><td class="text">Voice Calmness</td><td>25%</td><td>Evaluates audio-based stress and vocal stability.</td></tr>
+        <tr><td class="text">Speaking Pace</td><td>15%</td><td>Captures rushed or unstable pacing during the interview.</td></tr>
+        <tr><td class="text">Micro-expression Control</td><td>15%</td><td>Represents small behavioral deviations and expression changes.</td></tr>
+      </tbody>
+    </table>
+    <p>Environment violations such as a detected phone or extra persons in frame reduce the final score and can cap the verdict band when risk is high.</p>
+    <h2>10. Expected Benefits</h2>
+    <ul>
+      <li>Helps recruiters make more structured and consistent decisions in remote interview settings.</li>
+      <li>Improves explainability by converting observations into documented metrics and flags.</li>
+      <li>Supports auditability through downloadable PDF reports and session summaries.</li>
+      <li>Creates a strong foundation for enterprise hiring platforms, campus placement portals, and proctored assessment environments.</li>
+    </ul>
+  </section>
+  <section class="page">
+    <h2>11. Future Scope</h2>
+    <div class="grid">
+      <div class="card"><h3>Live Model Integration</h3><p>Replace the simulated engine with deployed OpenCV, DeepFace, Librosa, and YOLO inference modules.</p></div>
+      <div class="card"><h3>Historical Analytics</h3><p>Store recruiter sessions to analyze candidate trends, interviewer patterns, and calibration quality over time.</p></div>
+      <div class="card"><h3>Bias Guardrails</h3><p>Add fairness audits, human review checkpoints, and responsible-AI controls to avoid over-reliance on automation.</p></div>
+      <div class="card"><h3>Enterprise Integrations</h3><p>Connect with ATS platforms, scheduling tools, and recruiter workflow systems for production adoption.</p></div>
+    </div>
+    <h2>12. Conclusion</h2>
+    <p>TruthLens AI demonstrates how a modern full-stack system can improve trust and structure in remote interviews. By bringing together video intelligence, voice analytics, behavioral scoring, and environment monitoring, the platform transforms a subjective interview experience into a more observable and evidence-backed workflow. Its current implementation already provides a compelling demo product and its architecture is ready for future real-model integration, deployment, and evaluation.</p>
+  </section>
+</body>
+</html>

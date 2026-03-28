@@ -1,0 +1,11 @@
+# Optional integrations for a full RouteWise AI deployment.
+# Install these when you are ready to replace the mock decision engine.
+
+motor
+pymongo
+redis
+langchain
+langchain-openai
+openai
+httpx
+pydantic-settings

@@ -1,0 +1,56 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#081316"/>
+  <g opacity="0.16">
+    <path d="M0 80H1600" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M0 180H1600" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M0 280H1600" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M0 380H1600" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M0 480H1600" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M0 580H1600" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M0 680H1600" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M0 780H1600" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M120 0V900" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M320 0V900" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M520 0V900" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M720 0V900" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M920 0V900" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M1120 0V900" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M1320 0V900" stroke="#16C2B0" stroke-width="1"/>
+    <path d="M1520 0V900" stroke="#16C2B0" stroke-width="1"/>
+  </g>
+  <rect x="72" y="64" width="1456" height="772" rx="34" fill="#0E1D20" stroke="#234A49" stroke-width="2"/>
+  <text x="116" y="126" fill="#16C2B0" font-size="24" font-family="Arial, Helvetica, sans-serif" letter-spacing="8">TRUTHLENS AI</text>
+  <text x="116" y="258" fill="#F0F6F3" font-size="82" font-weight="700" font-family="Arial, Helvetica, sans-serif">Remote</text>
+  <text x="116" y="346" fill="#F0F6F3" font-size="82" font-weight="700" font-family="Arial, Helvetica, sans-serif">Interview</text>
+  <text x="116" y="434" fill="#F1BA67" font-size="82" font-weight="700" font-family="Arial, Helvetica, sans-serif">Integrity</text>
+  <text x="116" y="498" fill="#88A7A2" font-size="28" font-family="Arial, Helvetica, sans-serif">Real-time candidate analysis with facial, voice, behavior,</text>
+  <text x="116" y="536" fill="#88A7A2" font-size="28" font-family="Arial, Helvetica, sans-serif">and environment signals for modern virtual hiring.</text>
+  <rect x="116" y="594" width="320" height="64" rx="18" fill="#16C2B0"/>
+  <text x="190" y="635" fill="#FFFFFF" font-size="28" font-weight="700" font-family="Arial, Helvetica, sans-serif">Start Interview</text>
+  <rect x="458" y="594" width="254" height="64" rx="18" fill="#13262A" stroke="#315C5A" stroke-width="2"/>
+  <text x="522" y="635" fill="#EDF6F3" font-size="28" font-weight="700" font-family="Arial, Helvetica, sans-serif">Recruiter View</text>
+  <rect x="934" y="152" width="490" height="246" rx="28" fill="#13262A" stroke="#315C5A" stroke-width="2"/>
+  <text x="972" y="208" fill="#16C2B0" font-size="20" font-family="Arial, Helvetica, sans-serif" letter-spacing="4">AI ANALYSIS LAYER</text>
+  <text x="972" y="270" fill="#F0F6F3" font-size="40" font-weight="700" font-family="Arial, Helvetica, sans-serif">Unified multimodal recruiter</text>
+  <text x="972" y="316" fill="#F0F6F3" font-size="40" font-weight="700" font-family="Arial, Helvetica, sans-serif">dashboard for remote interviews</text>
+  <text x="972" y="370" fill="#88A7A2" font-size="22" font-family="Arial, Helvetica, sans-serif">Stress, confidence, voice tremor, eye contact,</text>
+  <text x="972" y="402" fill="#88A7A2" font-size="22" font-family="Arial, Helvetica, sans-serif">phone detection, and multiple-person alerts.</text>
+  <g>
+    <rect x="934" y="434" width="228" height="56" rx="28" fill="#163235"/>
+    <text x="992" y="470" fill="#CFFFF8" font-size="22" font-family="Arial, Helvetica, sans-serif">OpenCV + DeepFace</text>
+    <rect x="1174" y="434" width="152" height="56" rx="28" fill="#163235"/>
+    <text x="1226" y="470" fill="#CFFFF8" font-size="22" font-family="Arial, Helvetica, sans-serif">Librosa</text>
+    <rect x="934" y="506" width="140" height="56" rx="28" fill="#163235"/>
+    <text x="983" y="542" fill="#CFFFF8" font-size="22" font-family="Arial, Helvetica, sans-serif">YOLO</text>
+    <rect x="1088" y="506" width="258" height="56" rx="28" fill="#163235"/>
+    <text x="1151" y="542" fill="#CFFFF8" font-size="22" font-family="Arial, Helvetica, sans-serif">Behavior Scoring</text>
+  </g>
+  <rect x="934" y="602" width="490" height="172" rx="28" fill="#101C1E" stroke="#274846" stroke-width="2"/>
+  <text x="972" y="656" fill="#F1BA67" font-size="22" font-family="Arial, Helvetica, sans-serif" letter-spacing="3">OUTCOMES</text>
+  <circle cx="980" cy="706" r="8" fill="#16C2B0"/>
+  <text x="1004" y="714" fill="#EDF6F3" font-size="24" font-family="Arial, Helvetica, sans-serif">Objective recruiter insights during interviews</text>
+  <circle cx="980" cy="748" r="8" fill="#16C2B0"/>
+  <text x="1004" y="756" fill="#EDF6F3" font-size="24" font-family="Arial, Helvetica, sans-serif">Real-time risk detection and flag generation</text>
+  <circle cx="980" cy="790" r="8" fill="#16C2B0"/>
+  <text x="1004" y="798" fill="#EDF6F3" font-size="24" font-family="Arial, Helvetica, sans-serif">Integrity score and downloadable PDF reports</text>
+</svg>
